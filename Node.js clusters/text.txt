@@ -1,0 +1,11 @@
+=> In Node.js, the "cluster" module allows you to create multiple child processes, referred to as workers, to take advantage of multi-core CPUs. This module enables parallel processing and load balancing, which can significantly improve the performance and responsiveness of your Node.js applications.
+
+=> Each worker process is responsible for handling incoming HTTP requests. When a request is made, one of the worker processes responds to it.
+
+=> The master process creates and manages the worker processes. It's responsible for forking and monitoring them.
+
+=> The worker processes are responsible for executing the application's logic. In this case, they create an HTTP server.
+
+=> By distributing incoming requests among the worker processes, you achieve load balancing and utilize all available CPU cores efficiently.
+
+=> Cluster module-based architecture is particularly useful for web servers and APIs where multiple clients can make requests simultaneously. It helps improve the application's responsiveness by allowing parallel processing of requests.

@@ -1,0 +1,13 @@
+1. what is testing ?
+=> Testing is use to ensure the reliability and correctness of your code. There are various testing frameworks and libraries available for Node.js that can help you write and run tests effectively. One of the most popular testing frameworks for Node.js is Mocha.
+
+2. Install Mocha.
+=> npm install -g mocha
+
+3. Create a Test File
+=> Create a test file with a naming convention that identifies it as a test file
+=> Example => example.test.js or example.spec.js
+=> In this file, you will write your test cases using Mocha's testing structure.
+
+4. run test file
+=> mocha example.test.js

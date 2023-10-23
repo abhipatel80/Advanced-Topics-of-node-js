@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO Chat</title>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <input id="message-input" autocomplete="off" /><button id="send-button">
+      Send
+    </button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      // Listen for custom 'chat message' event
+      socket.on("get-msg", (msg) => {
+        const messages = document.getElementById("messages");
+        const li = document.createElement("li");
+        li.textContent = msg;
+        messages.appendChild(li);
+      });
+
+      socket.on("delay-msg", (msg) => {
+        console.log(msg);
+      });
+
+      // Send messages
+      document.getElementById("send-button").addEventListener("click", () => {
+        const input = document.getElementById("message-input");
+        socket.emit("chat-msg", input.value);
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
